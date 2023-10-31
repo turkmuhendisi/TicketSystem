@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class SingletonUserList {
+public class UserInformationService {
     /**
      * Singleton design pattern for
      */
     private static ArrayList<Object> userList;
 
-    private SingletonUserList() {
+    private UserInformationService() {
         userList = new ArrayList<>();
     }
 

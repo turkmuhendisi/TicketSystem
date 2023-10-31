@@ -1,3 +1,3 @@
 public interface IAuthRegisterService {
-    public boolean register();
+    boolean register();
 }

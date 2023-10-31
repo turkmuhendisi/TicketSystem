@@ -7,8 +7,8 @@ public class SystemConnection {
     void loginSystem(String phoneNumber) {
         if (authService.login(phoneNumber)) {
             System.out.println("Welcome dear "
-                    + SingletonUserList.getUserListInstance().get(1)
-                    + " " + SingletonUserList.getUserListInstance().get(2)
+                    + UserInformationService.getUserListInstance().get(1)
+                    + " " + UserInformationService.getUserListInstance().get(2)
             );
         } else System.out.println("Failed to connect!");
     }

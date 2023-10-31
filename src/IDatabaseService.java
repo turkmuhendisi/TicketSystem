@@ -6,5 +6,5 @@ public interface IDatabaseService {
     void userDataInsert(User user, int card) throws SQLException;
     void getUserData(User user) throws SQLException;
     void dataDelete();
-    void dataUpdate();
+    void cardDataUpdate(int setBalance, int cardID);
 }

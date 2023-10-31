@@ -7,22 +7,22 @@ public class AuthService implements IAuthRegisterService, IAuthLoginService, IAu
 
     @Override
     public boolean register() {
-        // Kayıt doğrulama işlemi yapıyorum.
+        // Register validation
 
         return true;
     }
 
     @Override
     public boolean login(String phoneNumber) {
-        // Giriş doğrulama işlemi yapıyorum
+        // Login validation
         User user = new User(phoneNumber);
         databaseTransactions.getUserData(user);
-        return SingletonUserList.getUserListInstance() == null ? false : true;
+        return UserInformationService.getUserListInstance() != null;
     }
 
     @Override
     public boolean logout() {
-        // Çıkış doğrulama işlemi yapıyorum
+        // Logout validation
         return true;
     }
 }

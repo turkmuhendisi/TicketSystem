@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.Optional;
 
 public class DatabaseTransactions implements IDatabaseService {
     Connection connection;
@@ -68,12 +69,12 @@ public class DatabaseTransactions implements IDatabaseService {
             statement.setString(1, user.getPhoneNumber());
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                SingletonUserList.setUserListInstance(resultSet.getInt(1));
-                SingletonUserList.setUserListInstance(resultSet.getString(2));
-                SingletonUserList.setUserListInstance(resultSet.getString(3));
-                SingletonUserList.setUserListInstance(resultSet.getString(4));
-                SingletonUserList.setUserListInstance(resultSet.getString(5));
-                SingletonUserList.setUserListInstance(resultSet.getInt(6));
+                UserInformationService.setUserListInstance(resultSet.getInt(1));
+                UserInformationService.setUserListInstance(resultSet.getString(2));
+                UserInformationService.setUserListInstance(resultSet.getString(3));
+                UserInformationService.setUserListInstance(resultSet.getString(4));
+                UserInformationService.setUserListInstance(resultSet.getString(5));
+                UserInformationService.setUserListInstance(resultSet.getInt(6));
             }
             resultSet.close();
             statement.close();
@@ -90,7 +91,20 @@ public class DatabaseTransactions implements IDatabaseService {
     }
 
     @Override
-    public void dataUpdate() {
+    public void cardDataUpdate(int setBalance, int cardID) {
+        try {
+            databaseConnection();
 
+            String query = "UPDATE cards SET balance = ? WHERE cardID = ?";
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, setBalance);
+            statement.setInt(2, cardID);
+
+            statement.executeUpdate();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

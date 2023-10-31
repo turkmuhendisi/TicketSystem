@@ -1,3 +1,3 @@
 public interface IAuthLoginService {
-    public boolean login(String phoneNumber);
+    boolean login(String phoneNumber);
 }
