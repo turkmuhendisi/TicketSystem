@@ -13,9 +13,9 @@ public class AuthService implements IAuthRegisterService, IAuthLoginService, IAu
     }
 
     @Override
-    public boolean login(String phoneNumber) {
+    public boolean login(String email) {
         // Login validation
-        User user = new User(phoneNumber);
+        User user = new User(email);
         databaseTransactions.getUserData(user);
         return UserInformationService.getUserListInstance() != null;
     }

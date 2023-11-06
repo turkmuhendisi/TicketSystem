@@ -4,8 +4,8 @@ public class SystemConnection {
         authService = new AuthService();
     }
 
-    void loginSystem(String phoneNumber) {
-        if (authService.login(phoneNumber)) {
+    void loginSystem(String email) {
+        if (authService.login(email)) {
             System.out.println("Welcome dear "
                     + UserInformationService.getUserListInstance().get(1)
                     + " " + UserInformationService.getUserListInstance().get(2)

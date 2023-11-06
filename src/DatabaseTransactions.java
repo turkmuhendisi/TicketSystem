@@ -1,5 +1,4 @@
 import java.sql.*;
-import java.util.Optional;
 
 public class DatabaseTransactions implements IDatabaseService {
     Connection connection;
@@ -17,13 +16,14 @@ public class DatabaseTransactions implements IDatabaseService {
         try {
             databaseConnection();
 
-            String query = "INSERT INTO cards (cardID,cardUser,cardType,balance) VALUES (?,?,?,?)";
+            String query = "INSERT INTO cards (cardID,cardUser,cardType,balance,userID) VALUES (?,?,?,?,?)";
             statement = connection.prepareStatement(query);
 
             statement.setInt(1, card.getCardID());
             statement.setString(2, user.getFirstName() + " " + user.getLastName());
             statement.setString(3, card.getCardType().toString());
             statement.setDouble(4, card.getBalance());
+            statement.setInt(5, user.getId());
 
             statement.executeUpdate();
             statement.close();
@@ -34,12 +34,12 @@ public class DatabaseTransactions implements IDatabaseService {
     }
 
     @Override
-    public void userDataInsert(User user, int cardID){
+    public void userDataInsert(User user){
 
         try {
             databaseConnection();
 
-            String query = "INSERT INTO accounts (userID,firstname,lastname,birthday,phone,cardID) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO accounts (userID,firstname,lastname,birthday,email) VALUES (?,?,?,?,?)";
             statement = connection.prepareStatement(query);
 
             statement.setInt(1, user.getId());
@@ -48,8 +48,7 @@ public class DatabaseTransactions implements IDatabaseService {
             // util.Date to sql.Date
             java.util.Date date = user.getBirthday();
             statement.setDate(4, new java.sql.Date(date.getTime()));
-            statement.setString(5, user.getPhoneNumber());
-            statement.setInt(6, cardID);
+            statement.setString(5, user.getEmail());
 
             statement.executeUpdate();
             statement.close();
@@ -64,9 +63,9 @@ public class DatabaseTransactions implements IDatabaseService {
         try {
             databaseConnection();
 
-            String query = "SELECT * FROM accounts WHERE phone = ?";
+            String query = "SELECT * FROM accounts WHERE email = ?";
             statement = connection.prepareStatement(query);
-            statement.setString(1, user.getPhoneNumber());
+            statement.setString(1, user.getEmail());
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 UserInformationService.setUserListInstance(resultSet.getInt(1));

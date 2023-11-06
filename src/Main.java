@@ -2,16 +2,16 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
+import javax.swing.JFrame;
+
 
 public class Main {
-    public static void main(String[] args) throws ParseException,SQLException {
+    public static void main(String[] args) throws ParseException, SQLException {
         //Defined start time for program performance test
         //long startTime = System.currentTimeMillis();
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = simpleDateFormat.parse("2001-08-26");
-
+        /*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = simpleDateFormat.parse("2001-08-26");*/
 
 
         //Program performance test
@@ -22,16 +22,16 @@ public class Main {
 
         // Account creation test
         /*AccountCreation testAccount = new AccountCreation();
-        testAccount.accountCreator("Berat", "Koca", date, "5059046023", 11);
+        testAccount.accountCreator("Teslime", "Koca", date, "5309760723", 12);*/
 
         //Card creation test
-        CardCreation testCard = new CardCreation();
+        /*CardCreation testCard = new CardCreation();
 
-        testCard.studentCardCreation("Berat","Koca",date);
-        SystemConnection connection = new SystemConnection();
-        connection.loginSystem("5059046023");
+        testCard.studentCardCreation("Teslime","Koca",date);*/
+        /*SystemConnection connection = new SystemConnection();
+        connection.loginSystem("5309760723");
 
-        PaymentService payment = new PaymentService();
+         PaymentService payment = new PaymentService();
         payment.payment(200);*/
 
 
@@ -44,14 +44,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int entry = input.nextInt();
         if (entry==1) {
-            System.out.println("Enter the phone number: ");
+            System.out.println("Enter your email: ");
             String phone = input.next();
             SystemConnection connection = new SystemConnection();
             connection.loginSystem(phone);
         }*/
 
-
-
+        EntryForm form = new EntryForm();
 
     }
+
 }
