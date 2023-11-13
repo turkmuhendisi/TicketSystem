@@ -1,3 +1,5 @@
+package controller.mail;
+
 import java.util.Random;
 
 public class RandomDigitGenerator {

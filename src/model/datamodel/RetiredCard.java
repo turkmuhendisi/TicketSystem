@@ -1,6 +1,11 @@
-public class StudentCard extends Card {
-    public StudentCard(CardType cardType, double balance) {
-        super(cardType, balance);
+package model.datamodel;
+
+import model.datamodel.Card;
+import model.model_enums.CardType;
+
+public class RetiredCard extends Card {
+    public RetiredCard(CardType cardType) {
+        super(cardType);
     }
 
     @Override

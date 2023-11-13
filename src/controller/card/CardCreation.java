@@ -1,3 +1,12 @@
+package controller.card;
+
+import model.db_operations.DatabaseTransactions;
+import model.datamodel.Card;
+import model.datamodel.RetiredCard;
+import model.datamodel.StudentCard;
+import model.datamodel.User;
+import model.model_enums.CardType;
+
 import java.sql.SQLException;
 import java.util.Date;
 

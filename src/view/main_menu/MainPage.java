@@ -1,3 +1,5 @@
+package view.main_menu;
+
 import javax.swing.*;
 
 public class MainPage extends JFrame{

@@ -1,3 +1,8 @@
+package model.db_operations;
+
+import model.datamodel.Card;
+import model.datamodel.User;
+
 import java.sql.SQLException;
 
 public interface IDatabaseService {

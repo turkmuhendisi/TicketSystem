@@ -1,3 +1,12 @@
+package controller.mail;
+
+import model.db_operations.DatabaseTransactions;
+import controller.account.IAuthLoginService;
+import controller.account.IAuthLogoutService;
+import controller.account.IAuthRegisterService;
+import controller.account.UserInformationService;
+import model.datamodel.User;
+
 public class AuthService implements IAuthRegisterService, IAuthLoginService, IAuthLogoutService {
     DatabaseTransactions databaseTransactions;
 
