@@ -73,7 +73,6 @@ public class DatabaseTransactions implements IDatabaseService {
                 UserInformationService.setUserListInstance(resultSet.getString(3));
                 UserInformationService.setUserListInstance(resultSet.getString(4));
                 UserInformationService.setUserListInstance(resultSet.getString(5));
-                UserInformationService.setUserListInstance(resultSet.getInt(6));
             }
             resultSet.close();
             statement.close();

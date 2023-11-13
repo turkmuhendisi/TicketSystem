@@ -1,8 +1,7 @@
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import javax.swing.JFrame;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Main {
@@ -20,9 +19,9 @@ public class Main {
         //System.out.println("run time: " + duration);
 
 
-        // Account creation test
+        //Account creation test
         /*AccountCreation testAccount = new AccountCreation();
-        testAccount.accountCreator("Teslime", "Koca", date, "5309760723", 12);*/
+        testAccount.accountCreator("Samet Berkant", "Koca", date, "editkurama@gmail.com");*/
 
         //Card creation test
         /*CardCreation testCard = new CardCreation();
@@ -51,7 +50,6 @@ public class Main {
         }*/
 
         EntryForm form = new EntryForm();
-
     }
 
 }
