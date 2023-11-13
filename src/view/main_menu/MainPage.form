@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainPage">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.main_menu.MainPage">
   <grid id="27dc6" binding="mainPage" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="675" height="502"/>
@@ -68,7 +68,7 @@
                       <foreground color="-1"/>
                       <hideActionText value="false"/>
                       <horizontalTextPosition value="0"/>
-                      <text value="New Card"/>
+                      <text value="New model.datamodel.Card"/>
                     </properties>
                     <clientProperties>
                       <hideActionText class="java.lang.Boolean" value="false"/>
@@ -141,7 +141,7 @@
                     <properties>
                       <font name="Segoe UI" size="12" style="1"/>
                       <foreground color="-1"/>
-                      <text value="Card Type:"/>
+                      <text value="model.datamodel.Card Type:"/>
                     </properties>
                   </component>
                   <component id="33dd5" class="javax.swing.JLabel" binding="balanceTitle">

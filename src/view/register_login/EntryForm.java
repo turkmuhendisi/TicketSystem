@@ -1,3 +1,11 @@
+package view.register_login;
+
+import controller.mail.AuthService;
+import controller.mail.GmailSender;
+import controller.mail.RandomDigitGenerator;
+import model.db_operations.SystemConnection;
+import view.main_menu.MainPage;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

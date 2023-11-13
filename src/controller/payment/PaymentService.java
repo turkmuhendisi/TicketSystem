@@ -1,3 +1,8 @@
+package controller.payment;
+
+import controller.account.UserInformationService;
+import model.db_operations.DatabaseTransactions;
+
 public class PaymentService {
 
     DatabaseTransactions databaseTransactions;

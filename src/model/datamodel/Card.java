@@ -1,3 +1,7 @@
+package model.datamodel;
+
+import model.model_enums.CardType;
+
 public abstract class Card {
     private int cardID;
     private CardType cardType;

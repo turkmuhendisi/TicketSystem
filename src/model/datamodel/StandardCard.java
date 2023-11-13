@@ -1,3 +1,7 @@
+package model.datamodel;
+
+import model.model_enums.CardType;
+
 public class StandardCard extends Card {
     public StandardCard(CardType cardType, double balance) {
         super(cardType, balance);

@@ -1,3 +1,8 @@
+package model.db_operations;
+
+import controller.account.UserInformationService;
+import controller.mail.AuthService;
+
 public class SystemConnection {
     AuthService authService;
     public SystemConnection() {
