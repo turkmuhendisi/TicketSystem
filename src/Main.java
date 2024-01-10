@@ -1,7 +1,7 @@
+import view.EntryForm;
+
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Main {
@@ -20,22 +20,22 @@ public class Main {
 
 
         //Account creation test
-        /*AccountCreation testAccount = new AccountCreation();
+        /*Service.AccountCreation testAccount = new Service.AccountCreation();
         testAccount.accountCreator("Samet Berkant", "Koca", date, "editkurama@gmail.com");*/
 
-        //Card creation test
-        /*CardCreation testCard = new CardCreation();
+        //Model.Card creation test
+        /*Service.CardCreation testCard = new Service.CardCreation();
 
         testCard.studentCardCreation("Teslime","Koca",date);*/
-        /*SystemConnection connection = new SystemConnection();
+        /*repository.SystemConnection connection = new repository.SystemConnection();
         connection.loginSystem("5309760723");
 
-         PaymentService payment = new PaymentService();
+         Service.PaymentService payment = new Service.PaymentService();
         payment.payment(200);*/
 
 
-        // User data getting test
-        /*SystemConnection connection = new SystemConnection();
+        // Model.User data getting test
+        /*repository.SystemConnection connection = new repository.SystemConnection();
         connection.loginSystem("5419664523");*/
 
         /*System.out.println("////////// Ticket System //////////");
@@ -45,7 +45,7 @@ public class Main {
         if (entry==1) {
             System.out.println("Enter your email: ");
             String phone = input.next();
-            SystemConnection connection = new SystemConnection();
+            repository.SystemConnection connection = new repository.SystemConnection();
             connection.loginSystem(phone);
         }*/
 

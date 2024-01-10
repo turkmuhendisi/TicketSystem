@@ -1,7 +1,11 @@
+package view;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class EntryForm extends JFrame{
@@ -27,10 +31,8 @@ public class EntryForm extends JFrame{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        loginButton.setFocusPainted(false);
-        registerButton.setFocusPainted(false);
-        loginFormButton.setFocusPainted(false);
-        sendButton.setFocusPainted(false);
+
+        JPanelGeneralController.setFocusable(new ArrayList<>(Arrays.asList(loginButton,registerButton,sendButton)),false);
         loginFormButton.setEnabled(false);
         codeField.setEnabled(false);
         timerLabel.setVisible(false);

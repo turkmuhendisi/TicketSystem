@@ -1,3 +1,11 @@
+package repository;
+
+import model.Card;
+import model.User;
+import service.CardInformationService;
+import service.IDatabaseService;
+import service.UserInformationService;
+
 import java.sql.*;
 
 public class DatabaseTransactions implements IDatabaseService {
@@ -12,18 +20,17 @@ public class DatabaseTransactions implements IDatabaseService {
     }
 
     @Override
-    public void cardDataInsert(Card card, User user){
+    public void cardDataInsert(Card card, int userID){
         try {
             databaseConnection();
 
-            String query = "INSERT INTO cards (cardID,cardUser,cardType,balance,userID) VALUES (?,?,?,?,?)";
+            String query = "INSERT INTO cards (cardID,cardType,balance,userID) VALUES (?,?,?,?)";
             statement = connection.prepareStatement(query);
 
             statement.setInt(1, card.getCardID());
-            statement.setString(2, user.getFirstName() + " " + user.getLastName());
-            statement.setString(3, card.getCardType().toString());
-            statement.setDouble(4, card.getBalance());
-            statement.setInt(5, user.getId());
+            statement.setString(2, card.getCardType().toString());
+            statement.setDouble(3, card.getBalance());
+            statement.setInt(4, userID);
 
             statement.executeUpdate();
             statement.close();
@@ -77,7 +84,28 @@ public class DatabaseTransactions implements IDatabaseService {
             resultSet.close();
             statement.close();
             connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    @Override
+    public void getCardData(int userID) throws SQLException {
+        try {
+            databaseConnection();
+            String query = "SELECT * FROM cards WHERE userID = ?";
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, userID);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                CardInformationService.setCardListInstance(resultSet.getInt(1));
+                CardInformationService.setCardListInstance(resultSet.getString(2));
+                CardInformationService.setCardListInstance(resultSet.getString(3));
+                CardInformationService.setCardListInstance(resultSet.getInt(4));
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

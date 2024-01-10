@@ -1,3 +1,5 @@
+package model;
+
 public abstract class Card {
     private int cardID;
     private CardType cardType;

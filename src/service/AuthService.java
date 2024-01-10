@@ -1,4 +1,10 @@
-public class AuthService implements IAuthRegisterService, IAuthLoginService, IAuthLogoutService {
+package service;
+
+import model.User;
+import java.sql.SQLException;
+import repository.DatabaseTransactions;
+
+public class AuthService implements IAuthRegisterService, IAuthLoginService, IAuthLogoutService, IAuthCardService {
     DatabaseTransactions databaseTransactions;
 
     public AuthService() {
@@ -12,6 +18,7 @@ public class AuthService implements IAuthRegisterService, IAuthLoginService, IAu
         return true;
     }
 
+
     @Override
     public boolean login(String email) {
         // Login validation
@@ -19,6 +26,12 @@ public class AuthService implements IAuthRegisterService, IAuthLoginService, IAu
         databaseTransactions.getUserData(user);
         return UserInformationService.getUserListInstance() != null;
     }
+    @Override
+    public boolean authCard(int userID) throws SQLException {
+        databaseTransactions.getCardData((int) UserInformationService.getUserListInstance().get(0));
+        return CardInformationService.getCardListInstance() != null;
+    }
+
 
     @Override
     public boolean logout() {

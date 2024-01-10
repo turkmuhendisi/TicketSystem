@@ -1,3 +1,8 @@
+package repository;
+
+import service.AuthService;
+import service.UserInformationService;
+
 public class SystemConnection {
     AuthService authService;
     public SystemConnection() {

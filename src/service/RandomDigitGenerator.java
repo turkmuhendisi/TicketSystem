@@ -1,3 +1,5 @@
+package service;
+
 import java.util.Random;
 
 public class RandomDigitGenerator {
@@ -12,7 +14,7 @@ public class RandomDigitGenerator {
         int max = 999999;
         authCode = random.nextInt(max - min + 1) + min;
         // Output Test
-        //System.out.println(authCode);
+        System.out.println(authCode);
         return authCode;
     }
 }

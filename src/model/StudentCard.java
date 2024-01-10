@@ -1,3 +1,5 @@
+package model;
+
 public class StudentCard extends Card {
     public StudentCard(CardType cardType, double balance) {
         super(cardType, balance);

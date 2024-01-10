@@ -1,3 +1,8 @@
+package service;
+
+import model.User;
+import repository.DatabaseTransactions;
+
 import java.sql.SQLException;
 import java.util.Date;
 

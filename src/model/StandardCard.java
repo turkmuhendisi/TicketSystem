@@ -1,6 +1,8 @@
-public class RetiredCard extends Card{
-    public RetiredCard(CardType cardType) {
-        super(cardType);
+package model;
+
+public class StandardCard extends Card {
+    public StandardCard(CardType cardType, double balance) {
+        super(cardType, balance);
     }
 
     @Override
