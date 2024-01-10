@@ -1,5 +1,8 @@
 package service;
 
+import model.Card;
+import model.User;
+
 import java.sql.SQLException;
 
 public interface IDatabaseService {

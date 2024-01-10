@@ -1,5 +1,7 @@
 package service;
 
+import repository.DatabaseTransactions;
+
 public class PaymentService {
 
     DatabaseTransactions databaseTransactions;

@@ -1,5 +1,11 @@
 package view;
 
+import controller.JPanelGeneralController;
+import repository.SystemConnection;
+import service.AuthService;
+import service.GmailSender;
+import service.RandomDigitGenerator;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
